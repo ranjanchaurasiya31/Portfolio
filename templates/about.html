@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}About - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="mb-5 animate__animated animate__fadeInUp">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-5">About Me</h1>
+            <div class="mb-5 p-4 bg-light rounded shadow-sm">
+                <h2>Who I Am</h2>
+                <p class="lead">Hi, I’m Ranjan Kumar — a final-year Computer Science student and aspiring web developer & cybersecurity enthusiast. I’m passionate about creating secure and user-friendly applications that make a difference. With skills in Python, Flask, JavaScript, and UI/UX principles, I enjoy building projects that combine functionality with beautiful design. I’m currently working on a Cybersecurity Awareness App for schools. </p>
+                <p>Outside of tech, I enjoy cooking, watching cricket, and writing poetry.</p>
+            </div>
+            <div class="mb-5 p-4 bg-light rounded shadow-sm">
+                <h2>Education</h2>
+                <div class="card animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <h3 class="h5">Bachelor of Technology</h3>
+                        <p class="text-muted">Rungta College of Engineering and Technology, 2026</p>
+                        <p>Focused on web development, algorithms, and software engineering principles.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-5 p-4 bg-light rounded shadow-sm">
+                <h2>Experience</h2>
+                <div class="card mb-3 animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <h3 class="h5">Graphic Designer</h3>
+                        <p class="text-muted">May, 2025 - May, 2025</p>
+                        <ul>
+                            <li>Completed a short-term internship contributing to the foundation’s social impact campaigns through creative design.
+                                Produced donation appeal reels, social media posts, and promotional graphics that conveyed the organization’s mission and
+                                engaged its audience effectively</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-5 p-4 bg-light rounded shadow-sm">
+                <h2>Positions and Responsibilities</h2>
+                <div class="card animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <h3 class="h5">Core Team Member</h3>
+                        <ul><li>Organized college fest as part of the core team, created and presented the prize distribution PPT, ensuring smooth event
+                            execution.</li></ul>
+                    </div>
+                </div><br>
+                <div class="card animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <h3 class="h5">Team Leader</h3>
+                        <ul>
+                            <li> Led a team in HackBIOS Hackathon.</li>
+                            <li>Led a team in HackTheSpace Hackathon</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

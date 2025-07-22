@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="mb-5 animate__animated animate__fadeInUp">
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="text-center mb-5">Get in Touch</h1>
+        <div class="row mb-5">
+            <div class="col-md-4 text-center mb-3">
+                    <div class="card h-100 animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <i class="fas fa-envelope fa-2x mb-3"></i>
+                        <h3 class="h5">Email</h3>
+                            <p class="mb-0">ranjan1497chaurasiya@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-3">
+                    <div class="card h-100 animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <i class="fas fa-phone fa-2x mb-3"></i>
+                        <h3 class="h5">Phone</h3>
+                            <p class="mb-0">+91 7985584070</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-3">
+                    <div class="card h-100 animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <i class="fas fa-map-marker-alt fa-2x mb-3"></i>
+                        <h3 class="h5">Location</h3>
+                            <p class="mb-0">Kushinagar, Uttar Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card animate__animated animate__fadeInUp">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Send Me a Message</h2>
+                <form action="/contact" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <h3 class="h4 mb-4">Connect with Me</h3>
+            <div class="d-flex justify-content-center gap-3">
+                    <a href="https://github.com/ranjanchaurasiya31" class="btn btn-outline-dark" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                    <a href="https://www.linkedin.com/in/ranjan-kumar-a9688a267" class="btn btn-outline-primary" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                    <a href="https://instagram.com/ranjanchaurasiya31" class="btn btn-outline-danger" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

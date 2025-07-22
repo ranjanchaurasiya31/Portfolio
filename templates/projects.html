@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="mb-5 animate__animated animate__fadeInUp">
+    <h1 class="text-center mb-5">My Projects</h1>
+    <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-6">
+            <div class="card h-100 animate__animated animate__fadeInUp">
+                <img src="{{ url_for('static', filename='images/project1.jpg') }}" class="card-img-top rounded-top" alt="Project 1">
+                <div class="card-body">
+                    <h2 class="card-title h4">E-commerce Furniture Store</h2>
+                    <p class="card-text">A full-featured e-commerce platform for furniture built with Python and Flask. Includes users to view product details , add to cart , and checkout.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-primary me-1">Python</span>
+                        <span class="badge bg-primary me-1">Flask</span>
+                        <span class="badge bg-primary me-1">SQLAlchemy</span>
+                        <span class="badge bg-primary">Bootstrap</span>
+                    </div>
+                    <a href="https://e-commerce-furniture-2wil.onrender.com/" class="btn btn-primary" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="col-md-6">
+            <div class="card h-100 animate__animated animate__fadeInUp"><img src="{{ url_for('static', filename='images/project3.jpg') }}" class="card-img-top rounded-top" alt="Project 3">
+                <div class="card-body">
+                    <h2 class="card-title h4">My Poetry</h2>
+                    <p class="card-text">A simple modern poetry web app where only admin can share poems, and users can like, dislike, and comment on them.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-primary me-1">Python</span>
+                        <span class="badge bg-primary me-1">Flask</span>
+                        <span class="badge bg-primary me-1">FastAPI</span>
+                        <span class="badge bg-primary">SQLlite</span>
+                        <span class="badge bg-primary">HTML5</span>
+                        <span class="badge bg-primary">CSS3</span>
+                        
+                    </div>
+                    <a href="https://my-poetry.onrender.com/" class="btn btn-primary" target="_blank">View Project</a>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="col-md-6">
+            <div class="card h-100 animate__animated animate__fadeInUp">
+                <img src="{{ url_for('static', filename='images/project2.jpg') }}" class="card-img-top rounded-top" alt="Project 2">
+                <div class="card-body">
+                    <h2 class="card-title h4">QR Code Generator</h2>
+                    <p class="card-text">A simple web app to generate and download QR codes in multiple formats from any text or URL..</p>
+                    <div class="mb-3">
+                        <span class="badge bg-primary me-1">Python</span>
+                        <span class="badge bg-primary me-1">Flask</span>
+                        <span class="badge bg-primary me-1">qrcode</span>
+                        <span class="badge bg-primary">HTML/CSS</span>
+                        <span class="badge bg-primary">JavaScript</span>
+                    </div>
+                    <a href="https://qr-code-generator-ihj7.onrender.com/" class="btn btn-primary" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="col-md-6">
+            <div class="card h-100 animate__animated animate__fadeInUp">
+                <img src="{{ url_for('static', filename='images/project4.jpg') }}" class="card-img-top rounded-top" alt="Project 4">
+                <div class="card-body">
+                    <h2 class="card-title h4">Blog Platform</h2>
+                    <p class="card-text">A modern blogging platform with markdown support, user authentication, and comment system.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-primary me-1">Python</span>
+                        <span class="badge bg-primary me-1">Flask</span>
+                        <span class="badge bg-primary me-1">MongoDB</span>
+                        <span class="badge bg-primary">TailwindCSS</span>
+                    </div>
+                    <a href="https://e-commerce-furniture-2wil.onrender.com/" class="btn btn-primary" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h2 class="text-center mt-5 mb-4">Figma Prototypes</h2>
+<div class="row g-4 justify-content-center">
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 animate__animated animate__fadeInUp">
+            <img src="{{ url_for('static', filename='images/figma1.png') }}" class="card-img-top rounded-top" alt="Figma Prototype 1">
+            <div class="card-body">
+                <h3 class="card-title h5">Image Detection Chat App</h3>
+                <p class="card-text">A modern image detection chatbot mobile app UI designed in Figma, focusing on user experience and clean design.</p>
+                <a href="https://www.figma.com/proto/X0fvXFcT3oOVc90RAEhg1g/Image-Detection-Chat-App?page-id=0%3A1&node-id=1-10&p=f&viewport=298%2C230%2C0.26&t=T4awyaJdaG7audDY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A10" class="btn btn-primary" target="_blank">View Prototype</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+        <div class="card h-100 animate__animated animate__fadeInUp">
+            <img src="{{ url_for('static', filename='images/figma2.png') }}" class="card-img-top rounded-top" alt="Figma Prototype 1">
+            <div class="card-body">
+                <h3 class="card-title h5">Online Voting Platform</h3>
+                <p class="card-text">A modern online voting platform UI designed in Figma, focusing on online voting where user can login, cast their vote using a token and many more...</p>
+                <a href="https://www.figma.com/proto/xB6ebG0lPqU1rDyu15bMp8/voting-web-type?page-id=0%3A1&node-id=4-70&p=f&viewport=390%2C441%2C0.06&t=dRNcLpChkpZJrw5P-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4%3A70" class="btn btn-primary" target="_blank">View Prototype</a>
+            </div>
+        </div>
+    </div>
+    <!-- Add more prototype cards as needed -->
+</div>
+{% endblock %} 

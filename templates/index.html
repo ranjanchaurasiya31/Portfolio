@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold">Ranjan Kumar</h1>
+    <p class="lead">Python Developer | Problem Solver | Tech Enthusiast | UI/UX Designer</p>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title">About Me</h2>
+                <p class="card-text">I'm a passionate Python developer with expertise in web development, focusing on creating elegant solutions to complex problems.</p>
+                <a href="{{ url_for('about') }}" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title">Featured Projects</h2>
+                <p class="card-text">Check out some of my latest projects showcasing my skills in various technologies.</p>
+                <a href="{{ url_for('projects') }}" class="btn btn-primary">View Projects</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-5">
+    <h2>Skills & Technologies</h2>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-4 mb-3">
+            <div class="p-3 bg-light rounded skill-card">
+                <h3 class="h5">Frontend</h3>
+                <div class="skill-bar" data-skill="90" data-skillname="HTML" data-detail="Semantic markup, accessibility, SEO best practices">
+                    <span><i class="fab fa-html5 text-danger"></i> HTML</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="85" data-skillname="CSS" data-detail="Flexbox, Grid, Responsive Design, Animations">
+                    <span><i class="fab fa-css3-alt text-primary"></i> CSS</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="80" data-skillname="JavaScript" data-detail="ES6+, DOM, Fetch API, Interactivity">
+                    <span><i class="fab fa-js-square text-warning"></i> JavaScript</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-details">Modern UI, Responsive Design, Animations</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="p-3 bg-light rounded skill-card">
+                <h3 class="h5">Backend</h3>
+                <div class="skill-bar" data-skill="95" data-skillname="Python" data-detail="OOP, Scripting, Libraries (Pandas, NumPy)">
+                    <span><i class="fab fa-python text-info"></i> Python</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="80" data-skillname="Flask" data-detail="Web apps, REST APIs, Jinja2">
+                    <span><i class="fas fa-flask text-secondary"></i> Flask</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="70" data-skillname="Django" data-detail="ORM, Admin, Authentication">
+                    <span><i class="fab fa-python text-success"></i> Django</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-details">API Design, RESTful Services, Authentication</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="p-3 bg-light rounded skill-card">
+                <h3 class="h5">Database</h3>
+                <div class="skill-bar" data-skill="85" data-skillname="SQL" data-detail="Joins, Indexing, Query Optimization">
+                    <span><i class="fas fa-database text-primary"></i> SQL</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="75" data-skillname="MongoDB" data-detail="NoSQL, Aggregation, Schemas">
+                    <span><i class="fas fa-leaf text-success"></i> MongoDB</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="80" data-skillname="SQLite" data-detail="Lightweight DB, Local Storage">
+                    <span><i class="fas fa-database text-secondary"></i> SQLite</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-details">Data Modeling, Query Optimization</div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-5 mb-3">
+            <div class="p-3 bg-light rounded skill-card">
+                <h3 class="h5">Tools</h3>
+                <div class="skill-bar" data-skill="90" data-skillname="Git" data-detail="Branching, Merging, Collaboration">
+                    <span><i class="fab fa-git-alt text-danger"></i> Git</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="85" data-skillname="VS Code" data-detail="Extensions, Debugging, Productivity">
+                    <span><i class="fas fa-code text-info"></i> VS Code</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="90" data-skillname="Figma" data-detail="Prototyping, UI Design">
+                    <span><i class="fab fa-figma text-danger"></i> Figma</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-details">Version Control, Prototyping, Debugging</div>
+            </div>
+        </div>
+        <div class="col-md-5 mb-3">
+            <div class="p-3 bg-light rounded skill-card">
+                <h3 class="h5">Soft Skills</h3>
+                <div class="skill-bar" data-skill="95" data-skillname="Team Collaboration" data-detail="Agile, Pair Programming, Code Reviews">
+                    <span><i class="fas fa-users text-primary"></i> Team Collaboration</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="90" data-skillname="Communication" data-detail="Presentations, Documentation, Client Interaction">
+                    <span><i class="fas fa-comments text-success"></i> Communication</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-bar" data-skill="85" data-skillname="Critical Thinking" data-detail="Problem Solving, Analysis">
+                    <span><i class="fas fa-brain text-warning"></i> Critical Thinking</span>
+                    <div class="bar"><div class="bar-inner"></div></div>
+                </div>
+                <div class="skill-details">Leadership, Problem Solving</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal for skill details -->
+<div class="modal fade" id="skillModal" tabindex="-1" aria-labelledby="skillModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="skillModalLabel">Skill Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="skillModalBody">
+        <!-- Details will be injected here -->
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+// Animate skill bars on page load
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.skill-bar').forEach(function(bar) {
+        var percent = bar.getAttribute('data-skill');
+        var inner = bar.querySelector('.bar-inner');
+        inner.style.width = percent + '%';
+        inner.style.transition = 'width 1.2s cubic-bezier(.4,2,.6,1)';
+        // Make skill bar clickable for modal
+        bar.style.cursor = 'pointer';
+        bar.addEventListener('click', function() {
+            var skill = bar.getAttribute('data-skillname');
+            var detail = bar.getAttribute('data-detail');
+            document.getElementById('skillModalLabel').textContent = skill;
+            document.getElementById('skillModalBody').textContent = detail;
+            var modal = new bootstrap.Modal(document.getElementById('skillModal'));
+            modal.show();
+        });
+    });
+    // Show details on hover
+    document.querySelectorAll('.skill-card').forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+            card.querySelector('.skill-details').style.opacity = 1;
+        });
+        card.addEventListener('mouseleave', function() {
+            card.querySelector('.skill-details').style.opacity = 0;
+        });
+    });
+});
+</script>
+{% endblock %} 
