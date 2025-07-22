@@ -5,7 +5,6 @@ import traceback
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
@@ -15,44 +14,36 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'your-secret-key-here')
 
-# Email Configuration
-SMTP_SERVER = 'smtp.gmail.com'
-SMTP_PORT = 587
-SENDER_EMAIL = 'ranjan1497chaurasiya@gmail.com'
-SENDER_PASSWORD = 'utqy slfn stnm cnxh'
-
-SENDGRID_API_KEY = "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"
-TO_EMAIL = "ranjan1497chaurasiya@gmail.com"  # Your verified sender email
+# Email Configuration (read from environment variables)
+SMTP_SERVER = os.getenv('SMTP_SERVER', 'smtp.gmail.com')
+SMTP_PORT = int(os.getenv('SMTP_PORT', 587))
+SENDER_EMAIL = os.getenv('SENDER_EMAIL')
+SENDER_PASSWORD = os.getenv('SENDER_PASSWORD')
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+TO_EMAIL = os.getenv('TO_EMAIL', SENDER_EMAIL)  # default to sender
 
 def send_email(subject, body, to_email):
     try:
-        # Create message
         msg = MIMEMultipart()
         msg['From'] = SENDER_EMAIL
         msg['To'] = to_email
         msg['Subject'] = subject
 
-        # Add body
         msg.attach(MIMEText(body, 'plain'))
 
-        # Create SMTP session
         print("\nConnecting to SMTP server...")
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.starttls()
-        
         print("Logging in...")
         server.login(SENDER_EMAIL, SENDER_PASSWORD)
-        
         print("Sending email...")
         text = msg.as_string()
         server.sendmail(SENDER_EMAIL, to_email, text)
-        
         print("Closing connection...")
         server.quit()
-        
         print("Email sent successfully!")
         return True
-        
+
     except Exception as e:
         print(f"\nError sending email: {str(e)}")
         print("\nFull traceback:")
@@ -78,14 +69,11 @@ def certifications():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
-        print("Contact form POST received")
-        print("Form data:", request.form)
         name = request.form.get('name', '')
         email = request.form.get('email', '')
         subject = request.form.get('subject', '')
         message = request.form.get('message', '')
 
-        # Compose the email
         email_subject = f"Portfolio Contact: {subject} (from {name}, {email})"
         email_body = f"""
 You have received a new message from your portfolio contact form.
@@ -96,10 +84,6 @@ Email: {email}
 Message:
 {message}
 """
-
-        print("SENDGRID_API_KEY:", SENDGRID_API_KEY)
-        print("Email subject:", email_subject)
-        print("Email body:", email_body)
 
         try:
             sg = SendGridAPIClient(SENDGRID_API_KEY)
@@ -124,7 +108,7 @@ Message:
 def test_email():
     subject = "Test Email from Portfolio"
     body = "This is a test email to verify the email configuration is working."
-    
+
     if send_email(subject, body, SENDER_EMAIL):
         return "Test email sent successfully! Please check your inbox and spam folder."
     else:
@@ -132,7 +116,6 @@ def test_email():
 
 @app.route('/sendgridtest')
 def sendgridtest():
-    print("SENDGRID_API_KEY:", SENDGRID_API_KEY)
     sg = SendGridAPIClient(SENDGRID_API_KEY)
     mail = Mail(
         from_email=TO_EMAIL,
@@ -145,4 +128,4 @@ def sendgridtest():
     return "Test email sent from /sendgridtest"
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5500) 
+    app.run(debug=True, port=5500)
